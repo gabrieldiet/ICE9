@@ -11,7 +11,8 @@ public class Vector2D
     private float y;
 
     // Public properties (Mutators and Accessors)
-    public float getX() {
+    public float getX()
+    {
         return x;
     }
 
@@ -38,7 +39,6 @@ public class Vector2D
         this.x = vector.x;
         this.y = vector.y;
     }
-
 
     // Constructors
     Vector2D()
@@ -73,7 +73,7 @@ public class Vector2D
         this.setY(this.getY() - rhs.getY());
     }
 
-    public void multiply(Vector2D rhs)
+    public void multiply(final Vector2D rhs)
     {
         this.setX(this.getX() * rhs.getX());
         this.setY(this.getY() * rhs.getY());
@@ -186,10 +186,10 @@ public class Vector2D
                 (b.getY() - a.getY()) * t);
     }
 
-    public static float dot(final Vector2D lhs, float Vector2D rhs)
+    public static float dot(final Vector2D lhs, final Vector2D rhs)
     {
-        return (float)(double)(lhs.getX()) * (double)(rhs.getX()) + (double)(lhs.getY()) *
-                (double)(ths.getY());
+        return (float)((double)(lhs.getX()) * (double)(rhs.getX()) +
+                (double)(lhs.getY()) * (double)(rhs.getY()));
     }
 
     public static float distance(final Vector2D a, final Vector2D b)
@@ -197,6 +197,6 @@ public class Vector2D
         final var delta_x = (double)(b.getX()) - (double)(a.getX());
         final var delta_y = (double)(b.getY()) - (double)(a.getY());
 
-        return (float)()
+        return (float)(Math.sqrt(delta_x * delta_x + delta_y * delta_y));
     }
 }

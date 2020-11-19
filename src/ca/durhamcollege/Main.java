@@ -7,36 +7,35 @@ public class Main {
     public static void main(String[] args)
     {
         Scanner keyboard = new Scanner(System.in);
+        String prompt = "";
 
+        // Point 1
         Vector2D point1 = new Vector2D();
         System.out.print("Enter the first point (x, y): ");
 
-
-
-        point1.setX(keyboard.nextFloat());
-        keyboard.next();
-        point1.setY(keyboard.nextFloat());
-
+        prompt = keyboard.nextLine();
+        var values = prompt.split(",");
+        point1.set(Float.parseFloat(values[0]), Float.parseFloat(values[1]));
 
         System.out.println("\n-------------------------------------------------------");
         System.out.println("You Entered " + point1 + " for the first point" );
         System.out.println("--------------------------------------------------------------\n" );
 
-
+        // Point 2
         Vector2D point2 = new Vector2D();
-        System.out.print("Enter the second point (x, y): ";
+        System.out.print("Enter the second point (x, y): ");
 
-        point2.setX(keyboard.nextFloat());
-        keyboard.next();
-        point2.setY(keyboard.nextFloat());
+        prompt = keyboard.nextLine();
+        values = prompt.split(",");
+        point2.set(Float.parseFloat(values[0]), Float.parseFloat(values[1]));
 
         System.out.println("\n--------------------------------------------------------------" );
         System.out.println("You Entered " + point2 + " for the second point" );
         System.out.println("--------------------------------------------------------------\n" );
 
-        System.out.printf("Magnitude of first point is: %.3f", point1.getMagnitude());
-        System.out.printf("Magnitude of second point is: %.3f", point2.getMagnitude());
-        System.out.println("Distance between first point and second point is: %.3f", Vector2D.distance(point1, point2));
+        System.out.printf("Magnitude of first point is: %.3f\n", point1.getMagnitude());
+        System.out.printf("Magnitude of second point is: %.3f\n", point2.getMagnitude());
+        System.out.printf("Distance between first point and second point is: %.3f\n", Vector2D.distance(point1, point2));
         System.out.println("----------------------------------------------------------\n");
 
     }
